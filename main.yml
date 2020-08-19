@@ -1,0 +1,6 @@
+---
+- name: Include a play after another play
+  import_playbook: r6full1.yml
+
+- name: Include a play after another play
+  import_playbook: tomcatinit.yml

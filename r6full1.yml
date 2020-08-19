@@ -1,0 +1,49 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  remote_user: ubuntu
+
+  tasks:
+  - name: Update and upgrade apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 #One day
+
+  - name: install JDK 8
+    apt:
+      update_cache: yes
+      name:  openjdk-8-jdk
+      state: present
+
+  - name: install python prerequsites
+    apt:
+      name: python-software-properties
+      state: present
+  - name: install python repo
+    apt_repository:
+      repo: 'ppa:deadsnakes/ppa'
+      state: present
+  - name: Install python
+    apt:
+      name: python3.6
+
+  - name: Install Pip
+    apt:
+      name: python3-pip
+
+  - name: PM2
+    pip:
+      name:
+       - future
+       - tabulate
+       - colorama>=0.3.8
+  - name: PM3
+    pip:
+      executable: pip3
+      name:
+       - h2o==3.30.0.4
+       - steam>=1.0.2
+       - jupyterhub==1.1.0
+       - driverlessai>=1.8,<1.9
