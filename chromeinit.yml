@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  remote_user: ubuntu
+  tasks:
+  - name: add Google Chrome repository
+    apt_repository: repo='deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+    tags: postgres
+
+  - name: add Google Chrome key
+    apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub
+    tags: postgres
+
+  - name: install Google Chrome via apt
+    apt:
+      name: google-chrome-stable
+      force: yes
