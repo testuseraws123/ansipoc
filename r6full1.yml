@@ -33,7 +33,7 @@
     apt:
       name: python3-pip
 
-  - name: PM2
+  - name: installing dependencies
     pip:
       name:
        - future
@@ -41,7 +41,7 @@
        - colorama>=0.3.8
   - name: PM3
     pip:
-      executable: pip3
+      executable: installing reqired packages
       name:
        - h2o==3.30.0.4
        - steam>=1.0.2
