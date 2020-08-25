@@ -47,3 +47,4 @@
        - steam>=1.0.2
        - jupyterhub==1.1.0
        - driverlessai>=1.8,<1.9
+       - teradata
