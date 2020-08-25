@@ -1,18 +1,18 @@
 ---
-- name: Include a play after another play
+- name: Installing packages
   import_playbook: r6full1.yml
 
-- name: Include a play after another play
+- name: Installing tomcat
   import_playbook: tomcatinit.yml
   
-- name: Include a play after another play
+- name: Installing mysql
   import_playbook: mysqlinit.yml
   
-- name: Include a play after another play
+- name: Installing postgres
   import_playbook: postgresinit.yml
   
-- name: Include a play after another play
+- name: Installing chrome softwere
   import_playbook: chromeinit.yml
   
-- name: Include a play after another play
+- name: Installing putty softwere
   import_playbook: puttyinit.yml  
