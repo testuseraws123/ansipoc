@@ -4,3 +4,15 @@
 
 - name: Include a play after another play
   import_playbook: tomcatinit.yml
+  
+- name: Include a play after another play
+  import_playbook: mysqlinit.yml
+  
+- name: Include a play after another play
+  import_playbook: postgresinit.yml
+  
+- name: Include a play after another play
+  import_playbook: chromeinit.yml
+  
+- name: Include a play after another play
+  import_playbook: puttyinit.yml  
